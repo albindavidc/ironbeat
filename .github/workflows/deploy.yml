@@ -34,3 +34,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/IronBeat/browser
+          # The following option allows to deploy to a different branch if needed, default is gh-pages
+          publish_branch: gh-pages
