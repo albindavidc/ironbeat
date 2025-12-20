@@ -228,5 +228,85 @@ export const EXERCISES: Exercise[] = [
       "Control the movement with your core."
     ],
     imageUrl: "images/hanging-windshield-wiper.gif"
+  },
+  {
+    id: 18,
+    name: "Chin-up",
+    difficulty: "Intermediate",
+    muscleGroups: ["Biceps", "Back", "Forearms"],
+    steps: [
+      "Grab the bar with your palms facing towards you (supinated grip), shoulder-width apart.",
+      "Hang with your arms fully extended.",
+      "Pull your body up until your chin is above the bar.",
+      "Lower yourself back down with control until your arms are fully extended."
+    ],
+    imageUrl: "images/chin-up.gif"
+  },
+  {
+    id: 19,
+    name: "Diamond Push-up",
+    difficulty: "Intermediate",
+    muscleGroups: ["Triceps", "Chest", "Shoulders"],
+    steps: [
+      "Start in a push-up position.",
+      "Place your hands close together under your chest so that your index fingers and thumbs touch to form a diamond shape.",
+      "Lower your body until your chest nearly touches your hands.",
+      "Push yourself back up to the starting position."
+    ],
+    imageUrl: "images/diamond-push-up.png"
+  },
+  {
+    id: 20,
+    name: "Hollow Body Hold",
+    difficulty: "Intermediate",
+    muscleGroups: ["Core"],
+    steps: [
+      "Lie on your back with your legs extended and arms overhead.",
+      "Press your lower back into the floor.",
+      "Lift your legs and shoulders off the ground simultaneously.",
+      "Hold this position, keeping your body in a banana shape.",
+      "Ensure your lower back remains in contact with the floor."
+    ],
+    imageUrl: "images/hollow-body-hold.jpg"
+  },
+  {
+    id: 21,
+    name: "Archer Push-up",
+    difficulty: "Advanced",
+    muscleGroups: ["Chest", "Triceps", "Shoulders", "Core"],
+    steps: [
+      "Start in a wide push-up position with hands wider than shoulder-width.",
+      "Lower your body towards one side, extending the other arm straight out.",
+      "Push back up to the center.",
+      "Repeat on the other side."
+    ],
+    imageUrl: "images/archer-push-up.png"
+  },
+  {
+    id: 22,
+    name: "Australian Pull-up",
+    difficulty: "Beginner",
+    muscleGroups: ["Back", "Biceps", "Rear Delts"],
+    steps: [
+      "Find a low bar roughly waist height.",
+      "Lie under the bar and grab it with hands shoulder-width apart.",
+      "Keep your body straight and heels on the ground.",
+      "Pull your chest towards the bar.",
+      "Lower yourself back down with control."
+    ],
+    imageUrl: "images/australian-pull-up.png"
+  },
+  {
+    id: 23,
+    name: "Calf Raise",
+    difficulty: "Beginner",
+    muscleGroups: ["Calves"],
+    steps: [
+      "Stand with your feet hip-width apart.",
+      "Raise your heels off the ground by pushing through the balls of your feet.",
+      "Squeeze your calves at the top.",
+      "Lower your heels back down slowly."
+    ],
+    imageUrl: "images/calf-raise.png"
   }
 ];
