@@ -1,38 +1,264 @@
 <div class="app-container">
   <header class="app-header">
-    <h1>IronBeat</h1>
-    <p>Your Ultimate Calisthenics Companion</p>
+    <nav class="nav">
+      <div class="logo">
+        <span class="logo-mark">IB</span>
+        <div>
+          <h1>IronBeat</h1>
+          <p>Elite Calisthenics Progressive Training System</p>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <button class="ghost">View Demo</button>
+        <button class="primary">Start Assessment</button>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Coach-built. Athlete-tested.</p>
+        <h2>Build elite strength, skill, and mobility with adaptive calisthenics programming.</h2>
+        <p class="hero-subtitle">
+          IronBeat delivers a progressive overload engine, a skill-tree roadmap, and recovery-smart
+          sessions that guide beginners to advanced mastery with confidence.
+        </p>
+        <div class="hero-ctas">
+          <button class="primary">Generate My Program</button>
+          <button class="ghost">Explore Skill Tree</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat" *ngFor="let stat of heroStats">
+            <h3>{{ stat.value }}</h3>
+            <p>{{ stat.label }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Weekly Readiness Pulse</h3>
+        <p class="card-subtitle">Auto-adjusted by sleep, soreness, and performance trends.</p>
+        <div class="readiness">
+          <div>
+            <span>Strength Focus</span>
+            <strong>Push / Pull</strong>
+          </div>
+          <div>
+            <span>Recovery Score</span>
+            <strong>82%</strong>
+          </div>
+          <div>
+            <span>Next Skill Unlock</span>
+            <strong>Archer Push-up</strong>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span>Deload in 2 weeks</span>
+          <span>RPE target 7-8</span>
+        </div>
+      </div>
+    </section>
   </header>
 
   <main>
-    <app-exercise-detail
-      *ngIf="selectedExercise"
-      [exercise]="selectedExercise"
-      (back)="onBack()">
-    </app-exercise-detail>
-
-    <div *ngIf="!selectedExercise">
-      <div class="filter-container">
-        <label htmlFor="difficulty-filter">Filter by Difficulty:</label>
-        <select
-          id="difficulty-filter"
-          [(ngModel)]="filterDifficulty"
-        >
-          <option value="All">All Levels</option>
-          <option value="Beginner">Beginner</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Advanced">Advanced</option>
-        </select>
+    <section class="mission">
+      <div>
+        <p class="eyebrow">Core Mission</p>
+        <h2>Transform athletes through intelligent progression and biomechanically sound training.</h2>
       </div>
+      <div class="mission-list">
+        <div class="mission-card" *ngFor="let item of missions">
+          <span>✓</span>
+          <p>{{ item }}</p>
+        </div>
+      </div>
+    </section>
 
-      <app-exercise-list
-        [exercises]="filteredExercises"
-        (exerciseSelected)="onSelectExercise($event)">
-      </app-exercise-list>
-    </div>
+    <section class="value-props">
+      <div class="value-card" *ngFor="let prop of valueProps">
+        <h3>{{ prop.title }}</h3>
+        <p>{{ prop.description }}</p>
+      </div>
+    </section>
+
+    <section class="assessment">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Step 1</p>
+          <h2>User Profiling & Assessment</h2>
+          <p class="section-subtitle">
+            Launch with a comprehensive movement screen and benchmark testing to set the perfect starting tier.
+          </p>
+        </div>
+        <button class="ghost">Preview Assessment Flow</button>
+      </div>
+      <div class="assessment-grid">
+        <div class="assessment-card" *ngFor="let item of assessmentHighlights">
+          <h3>{{ item }}</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill-tree">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Skill Tree</p>
+          <h2>Unlock movement mastery with structured progressions.</h2>
+        </div>
+        <button class="primary">View Skill Map</button>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-card" *ngFor="let chain of skillChains">
+          <div class="skill-header">
+            <h3>{{ chain.title }}</h3>
+            <span>{{ chain.focus }}</span>
+          </div>
+          <div class="skill-level" *ngFor="let level of chain.levels">
+            <span class="level-pill">Tier</span>
+            <p>{{ level }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="programming">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Programming Engine</p>
+          <h2>Periodized plans that evolve with performance.</h2>
+          <p class="section-subtitle">
+            Daily undulating periodization with automated deloads ensures progression without burnout.
+          </p>
+        </div>
+      </div>
+      <div class="programming-grid">
+        <div class="programming-card" *ngFor="let pillar of programmingPillars">
+          <h3>{{ pillar.title }}</h3>
+          <ul>
+            <li *ngFor="let point of pillar.points">{{ point }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="workout">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Workout Experience</p>
+          <h2>Real-time execution with coaching cues.</h2>
+        </div>
+        <button class="ghost">Enter Workout Mode</button>
+      </div>
+      <div class="workout-grid">
+        <div class="workout-card">
+          <h3>Live Session UI</h3>
+          <p>Timer, rep counter, and form cues keep every set intentional.</p>
+          <div class="timer">
+            <span>Rest Timer</span>
+            <strong>00:45</strong>
+          </div>
+        </div>
+        <div class="workout-card">
+          <h3>Execution Features</h3>
+          <ul>
+            <li *ngFor="let feature of workoutFeatures">{{ feature }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracking">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Progress Tracking</p>
+          <h2>Measure every rep, hold, and milestone.</h2>
+        </div>
+      </div>
+      <div class="tracking-grid">
+        <div class="tracking-card" *ngFor="let group of trackingFeatures">
+          <h3>{{ group.title }}</h3>
+          <ul>
+            <li *ngFor="let item of group.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="education">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Education</p>
+          <h2>Teach the why behind every movement.</h2>
+        </div>
+      </div>
+      <div class="education-grid">
+        <div class="education-card" *ngFor="let resource of educationResources">
+          <h3>{{ resource.title }}</h3>
+          <ul>
+            <li *ngFor="let item of resource.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="community">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Community & Motivation</p>
+          <h2>Drive consistency with social accountability.</h2>
+        </div>
+      </div>
+      <div class="community-card">
+        <ul>
+          <li *ngFor="let item of communityFeatures">{{ item }}</li>
+        </ul>
+        <button class="primary">Join a Challenge</button>
+      </div>
+    </section>
+
+    <section class="smart">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Smart Features</p>
+          <h2>Adaptive AI insights for every athlete.</h2>
+        </div>
+      </div>
+      <div class="smart-grid">
+        <div class="smart-card" *ngFor="let feature of smartFeatures">
+          <h3>{{ feature.title }}</h3>
+          <ul>
+            <li *ngFor="let item of feature.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Technical Implementation</p>
+          <h2>Phased rollout with clear MVP milestones.</h2>
+        </div>
+        <button class="ghost">Download Spec</button>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-card" *ngFor="let phase of roadmap">
+          <h3>{{ phase.title }}</h3>
+          <ul>
+            <li *ngFor="let item of phase.items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="app-footer">
-    <p>&copy; {{ 2025 }} IronBeat. Keep pushing.</p>
+    <div>
+      <h3>IronBeat</h3>
+      <p>Elevate your calisthenics journey with data-driven progression.</p>
+    </div>
+    <div class="footer-links">
+      <span>Privacy</span>
+      <span>Support</span>
+      <span>Terms</span>
+    </div>
   </footer>
 </div>
